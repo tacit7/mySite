@@ -1,0 +1,24 @@
+Default: &defaults
+  user: mySite
+  password: mySite
+  host: localhost
+  port: 5432
+  database: mySite
+  poolsize: 10
+
+Development:
+  <<: *defaults
+
+Testing:
+  database: mySite_test
+  <<: *defaults
+
+Staging:
+  database: mySite_staging
+  poolsize: 100
+  <<: *defaults
+
+Production:
+  database: mySite_production
+  poolsize: 100
+  <<: *defaults
